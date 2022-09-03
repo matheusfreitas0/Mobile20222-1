@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getIntent().getIntExtra("userId",-1);
         Log.d(TAG, "onCreate: começando a bagaça");
         setContentView(R.layout.activity_main);
         /*(R.id.botao).setOnClickListener(new View.OnClickListener() {
@@ -31,11 +32,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(View view) {
                 Log.d(TAG, "onClick: Alguém clicou ocl");
                 Intent intent = new Intent(view.getContext(), Activity2.class);
+                intent.putExtra("userId", 1);
+
+
                 startActivity(intent);
             }
         };
 
-        
+
         findViewById(R.id.button02).setOnClickListener( ocl );
         findViewById(R.id.botao).setOnClickListener(
                 (view) -> {
