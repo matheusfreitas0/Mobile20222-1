@@ -1,12 +1,18 @@
 package br.edu.uniritter.mobile.mobile20222_1;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import br.edu.uniritter.mobile.mobile20222_1.adapter.UsersAddapter;
 import br.edu.uniritter.mobile.mobile20222_1.model.User;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -48,7 +54,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     Intent intent = new Intent(view.getContext(), Activity2.class);
                     startActivity(intent);
                 });
-
+        RecyclerView rc = findViewById(R.id.recycler1);
+        List<User> lista = new ArrayList<>();
+        lista.add(User.getUsers().get(4));
+        UsersAddapter adapter = new UsersAddapter( lista);
+        rc.setAdapter(adapter);
+        LinearLayoutManager llm1 = new LinearLayoutManager(this);
+        rc.setLayoutManager(llm1);
     }
 
     @Override

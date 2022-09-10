@@ -49,7 +49,20 @@ public class User {
             users.add( new User(2, "Jean 2", "jp2", "1234"));
             users.add( new User(3, "Jean 3", "jp3", "1234"));
             users.add( new User(4, "Jean 4", "jp4", "1234"));
+            users.add( new User(11, "Jean 11", "jp1", "1234"));
+            users.add( new User(12, "Jean 12", "jp2", "1234"));
+            users.add( new User(13, "Jean 13", "jp3", "1234"));
+            users.add( new User(14, "Jean 14", "jp4", "1234"));
         }
         return users;
+    }
+    public static User getUserById(int id) {
+        User ret = null;
+        for(User u : users) {
+            if (u.getId() == id) {
+                ret = u;
+            }
+        }
+        return ret;
     }
 }
