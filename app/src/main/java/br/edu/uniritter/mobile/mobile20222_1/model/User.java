@@ -27,6 +27,9 @@ public class User {
         return name;
     }
 
+    public String getTitulo() {
+        return userLogin+" - "+name+" ("+id+")";
+    }
     public String getPassword() {
         return password;
     }
