@@ -4,9 +4,7 @@ plugins {
 
 android {
     compileSdk 32
-    dataBinding {
-        enabled = true
-    }
+
     defaultConfig {
         applicationId "br.edu.uniritter.mobile.mobile20222_1"
         minSdk 28
